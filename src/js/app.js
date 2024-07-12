@@ -9,8 +9,8 @@ const listLeft = document.querySelector('.leftNumber').childNodes;
 const listBottom = document.querySelector('.bottomNumber').childNodes;
 
 const listTr = document.querySelectorAll('.line')
-console.log(listTr)
-console.log(listTr[0].children[6].textContent)
+// console.log(listTr)
+// console.log(listTr[0].children[6].textContent)
 
 let listNumberTop = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let listNumberLeft = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -65,21 +65,21 @@ buttonBottom.onclick = () => {
 }
 
 buttonStart.onclick = () => {
-    // if (listNumberBottom.length === 0 && listNumberTop.lenght === 0 && listNumberLeft.lenght === 0) {
-    console.log(listNumberTop.length === 0)
-    console.log(listNumberLeft.length)
-    if ((listNumberTop.length === 0) && (listNumberLeft.lenght === 0)) {
+    if (listNumberBottom.length === 0 && listNumberTop.length === 0 && listNumberLeft.length === 0) {
+    // if (listNumberBottom.length === 0) {
+    // console.log(listNumberTop.length === 0)
+    // console.log(listNumberLeft.length)
+    // if (listNumberTop.length === 0 && listNumberLeft.length === 0) {
+        console.log('Я работаю!')
         const top = document.querySelector('.topNumber').children;
         for (var i=0; i<top.length; i++) {
             let number = Number(top[i].textContent)
             const imgEl = document.createElement('img');
             imgEl.src = 'src/img/gray_1.svg';
-            // console.log(Boolean(listTr[number].children[i].firstChild))
             listTr[number - 1].children[i].appendChild(imgEl)
-            // console.log(Boolean(listTr[number - 1].children[i].firstChild))
         }
         const left = document.querySelector('.leftNumber').children;
-        for (var i=0; i<top.length; i++) {
+        for (var i=0; i<left.length; i++) {
             let number = Number(left[i].textContent)
             const imgEl = document.createElement('img');
             if (listTr[i].children[number - 1].firstChild) {
@@ -89,14 +89,21 @@ buttonStart.onclick = () => {
                 listTr[i].children[number - 1].appendChild(imgEl)
             }
         }
+        const bottom = document.querySelector('.bottomNumber').children;
+        for (var i=0; i<bottom.length; i++) {
+            let number = Number(bottom[i].textContent)
+            const imgEl = document.createElement('img');
+            if (listTr[10 - number].children[i].firstChild) {
+                if (listTr[10 - number].children[i].firstChild.src == 'file:///C:/Users/zlaya/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Pages/Divination/src/img/gray_1.svg') {
+                    listTr[10 - number].children[i].firstChild.src = 'src/img/pink_2.svg'
+                } else if (listTr[10 - number].children[i].firstChild.src == 'file:///C:/Users/zlaya/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Pages/Divination/src/img/pink_2.svg') {
+                    listTr[10 - number].children[i].firstChild.src = 'src/img/red_3.svg'
+                }
+            } else {
+                imgEl.src = 'src/img/gray_1.svg';
+                listTr[10 - number].children[i].appendChild(imgEl)
+            }
+        }
     }
 
 }
-
-// const imgEl = document.createElement('img');
-// imgEl.src = 'src/img/goblin.png';
-// let indexNow = getRandomInt(0, cells.length);
-// cells[indexNow].appendChild(imgEl);
-
-// const img = document.querySelector('img')
-//     cells[index].appendChild(img);
