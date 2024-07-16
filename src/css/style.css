@@ -95,13 +95,9 @@ table {
     /* border: 1px solid blueviolet; */
 }
 
-.button {
-    border: 2px solid #333;
-    /* margin-bottom: 5px; */
-}
-
 button {
     border-radius:0.5em;
+    border: 2px solid #333;
 }
 
 .divrules {
@@ -111,15 +107,18 @@ button {
     padding: 0;
     justify-content: center;
     border: 5px solid rgb(63, 62, 62);
-    width: calc(40vmin - 10px);
+    min-width: calc(45vmin - 10px);
+    max-width: calc(70vmin - 10px);
     height: calc(84vmin - 10px);
+    padding: 0 calc(3vmin);
+    text-align: justify;
 }
 
 .sign {
     margin: 0;
     padding: 0;
-    width: calc(6vmin - 1px);
-    height: calc(6vmin - 1px);
+    width: calc(5vmin - 1px);
+    height: calc(5vmin - 1px);
     /* border: 1px solid #aaa;
     background-color: #eee; */
     box-sizing: border-box;
@@ -127,8 +126,8 @@ button {
 
 .combination {
     display: flex;
-    font-size: 2.7vmin;
-    padding-left: calc(3vmin);
+    font-size: 2.6vmin;
+    /* padding-left: calc(3vmin); */
 
 }
 
@@ -142,22 +141,3 @@ button {
     border: 1px solid green;
 } */
 
-
-  #wrapperBlock{
-    margin: 3px auto;
-    padding: 0;
-    display: flex;
-    flex-flow: row wrap;
-    width: calc(100vmin - 10px);
-    height: calc(100vmin - 10px);
-    border: 2px solid #333;
-  }
-  .square{
-    margin: 0;
-    padding: 0;
-    width: calc(10vmin - 1px);
-    height: calc(10vmin - 1px);
-    border: 1px solid #aaa;
-    background-color: #eee;
-    box-sizing: border-box;
-  }

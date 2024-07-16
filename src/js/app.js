@@ -77,15 +77,19 @@ buttonStart.onclick = () => {
             const imgEl = document.createElement('img');
             imgEl.src = 'src/img/gray_1.svg';
             listTr[number - 1].children[i].appendChild(imgEl)
+            listTr[number - 1].children[i].classList.add('gray');
         }
         const left = document.querySelector('.leftNumber').children;
         for (var i=0; i<left.length; i++) {
             let number = Number(left[i].textContent)
             const imgEl = document.createElement('img');
             if (listTr[i].children[number - 1].firstChild) {
+                listTr[i].children[number - 1].classList.remove('gray')
+                listTr[i].children[number - 1].classList.add('pink')
                 listTr[i].children[number - 1].firstChild.src = 'src/img/pink_2.svg'
             } else {
                 imgEl.src = 'src/img/gray_1.svg';
+                listTr[i].children[number - 1].classList.add('gray')
                 listTr[i].children[number - 1].appendChild(imgEl)
             }
         }
@@ -93,15 +97,18 @@ buttonStart.onclick = () => {
         for (var i=0; i<bottom.length; i++) {
             let number = Number(bottom[i].textContent)
             const imgEl = document.createElement('img');
-            if (listTr[10 - number].children[i].firstChild) {
-                if (listTr[10 - number].children[i].firstChild.src == 'file:///C:/Users/zlaya/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Pages/Divination/src/img/gray_1.svg') {
-                    listTr[10 - number].children[i].firstChild.src = 'src/img/pink_2.svg'
-                } else if (listTr[10 - number].children[i].firstChild.src == 'file:///C:/Users/zlaya/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/Git%20Pages/Divination/src/img/pink_2.svg') {
-                    listTr[10 - number].children[i].firstChild.src = 'src/img/red_3.svg'
-                }
+            if (listTr[10 - number].children[i].classList.contains('gray')) {
+                listTr[10 - number].children[i].firstChild.src = 'src/img/pink_2.svg'
+                listTr[10 - number].children[i].classList.remove('gray')
+                listTr[10 - number].children[i].classList.add('pink')
+            } else if (listTr[10 - number].children[i].classList.contains('pink')) {
+                listTr[10 - number].children[i].firstChild.src = 'src/img/red_3.svg'
+                listTr[10 - number].children[i].classList.remove('pink')
+                listTr[10 - number].children[i].classList.add('red')
             } else {
                 imgEl.src = 'src/img/gray_1.svg';
                 listTr[10 - number].children[i].appendChild(imgEl)
+                listTr[10 - number].children[i].classList.add('gray')
             }
         }
     }
