@@ -16,53 +16,151 @@ let listNumberTop = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let listNumberLeft = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let listNumberBottom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-buttonTop.onclick = () => {
+function arrangementOfNumbers (listNumber, listCells, event) {
+    if (listNumber.length > 0) {
+        let index = Array.from(listCells).indexOf(event.target);
+        listCells[index].textContent = listNumber[0];
+        listNumber.splice(0,1);
+        setTimeout(() => {
+            listCells[index].dataset.number = listCells[index].textContent;
+            listCells[index].textContent = ""
+            const imgEl = document.createElement('img');
+            imgEl.src = 'src/img/gray_1.svg';
+            listCells[index].appendChild(imgEl)
+            imgEl.addEventListener('click', () => {
+                const parent = imgEl.parentElement
+                parent.removeChild(imgEl)
+                parent.textContent = parent.dataset.number
+                setTimeout(() => {
+                    parent.dataset.number = parent.textContent;
+                    parent.textContent = '';
+                    parent.appendChild(imgEl)
+                }, 1000)
+            })
+        }, 1000)
+    }
+}
+
+// buttonTop.onclick = () => {
     listTop.forEach(function(cell) {
         cell.addEventListener('click', (event) => {
             if (listNumberTop.length > 0) {
                 let index = Array.from(listTop).indexOf(event.target);
-                if (listTop[index].textContent) {
-                    listNumberTop.unshift(listTop[index].textContent)
-                    listTop[index].textContent = ""
+                if (listTop[index].classList.contains('filled')) {
+                    // console.log(listBottom[index].classList.contains('filled'))
                 } else {
+                    listTop[index].classList.add('filled')
                     listTop[index].textContent = listNumberTop[0];
                     listNumberTop.splice(0,1);
+                    setTimeout(() => {
+                        listTop[index].dataset.number = listTop[index].textContent;
+                        listTop[index].textContent = ""
+                        const imgEl = document.createElement('img');
+                        imgEl.src = 'src/img/gray_1.svg';
+                        listTop[index].appendChild(imgEl)
+                        imgEl.addEventListener('click', () => {
+                            const parent = imgEl.parentElement
+                            parent.removeChild(imgEl)
+                            parent.textContent = parent.dataset.number
+                            setTimeout(() => {
+                                parent.dataset.number = parent.textContent;
+                                parent.textContent = '';
+                                parent.appendChild(imgEl)
+                            }, 1000)
+                        })
+                    }, 1000)
                 }
             }
         }, false)  
-
     });
-}
+// }
 
-buttonLeft.onclick = () => {
-    listLeft.forEach(function(cell) {
-        cell.addEventListener('click', (event) => {
+listLeft.forEach(function(cell) {
+    cell.addEventListener('click', (event) => {
+        if (listNumberLeft.length > 0) {
             let index = Array.from(listLeft).indexOf(event.target);
-            if (listLeft[index].textContent) {
-                listNumberLeft.unshift(listLeft[index].textContent)
-                listLeft[index].textContent = ""
+            if (listLeft[index].classList.contains('filled')) {
+                // console.log(listBottom[index].classList.contains('filled'))
             } else {
+                listLeft[index].classList.add('filled')
                 listLeft[index].textContent = listNumberLeft[0];
                 listNumberLeft.splice(0,1);
+                setTimeout(() => {
+                    listLeft[index].dataset.number = listLeft[index].textContent;
+                    listLeft[index].textContent = ""
+                    const imgEl = document.createElement('img');
+                    imgEl.src = 'src/img/gray_1.svg';
+                    listLeft[index].appendChild(imgEl)
+                    imgEl.addEventListener('click', () => {
+                        const parent = imgEl.parentElement
+                        parent.removeChild(imgEl)
+                        parent.textContent = parent.dataset.number
+                        setTimeout(() => {
+                            parent.dataset.number = parent.textContent;
+                            parent.textContent = '';
+                            parent.appendChild(imgEl)
+                        }, 1000)
+                    })
+                }, 1000)
             }
-        }, false)   
-    });
-}
+        }
+    }, false)  
+});
 
-buttonBottom.onclick = () => {
+// buttonLeft.onclick = () => {
+//     listLeft.forEach(function(cell) {
+//         cell.addEventListener('click', (event) => {
+//             let index = Array.from(listLeft).indexOf(event.target);
+//             if (listLeft[index].textContent) {
+//                 listNumberLeft.unshift(listLeft[index].textContent)
+//                 listLeft[index].textContent = ""
+//             } else {
+//                 listLeft[index].textContent = listNumberLeft[0];
+//                 listNumberLeft.splice(0,1);
+//             }
+//         }, false)   
+//     });
+// }
+
+// listLeft.forEach(function(cell) {
+//     cell.addEventListener('click', arrangementOfNumbers(listNumberLeft, listLeft, this.event), false)   
+// });
+
+// buttonBottom.onclick = () => {
     listBottom.forEach(function(cell) {
         cell.addEventListener('click', (event) => {
-            let index = Array.from(listBottom).indexOf(event.target);
-            if (listBottom[index].textContent) {
-                listNumberBottom.unshift(listBottom[index].textContent)
-                listBottom[index].textContent = ""
-            } else {
-                listBottom[index].textContent = listNumberBottom[0];
-                listNumberBottom.splice(0,1);
+            if (listNumberBottom.length > 0) {
+                let index = Array.from(listBottom).indexOf(event.target);
+                // console.log(listBottom[index].classList)
+                if (listBottom[index].classList.contains('filled')) {
+                    // console.log(listBottom[index].classList.contains('filled'))
+                } else {
+                    listBottom[index].classList.add('filled')
+                    listBottom[index].textContent = listNumberBottom[0];
+                    listNumberBottom.splice(0,1);
+                    setTimeout(() => {
+                        listBottom[index].dataset.number = listBottom[index].textContent;
+                        listBottom[index].textContent = ""
+                        const imgEl = document.createElement('img');
+                        imgEl.classList.add('filled')
+                        imgEl.src = 'src/img/gray_1.svg';
+                        listBottom[index].appendChild(imgEl)
+                        imgEl.addEventListener('click', () => {
+                            const parent = imgEl.parentElement
+                            parent.removeChild(imgEl)
+                            parent.textContent = parent.dataset.number
+                            setTimeout(() => {
+                                parent.dataset.number = parent.textContent;
+                                parent.textContent = '';
+                                parent.appendChild(imgEl)
+                            }, 1000)
+                        })
+                    }, 1000)
+                }
             }
         }, false)   
     });
-}
+// }
 
 buttonStart.onclick = () => {
     if (listNumberBottom.length === 0 && listNumberTop.length === 0 && listNumberLeft.length === 0) {
@@ -73,7 +171,9 @@ buttonStart.onclick = () => {
         console.log('Я работаю!')
         const top = document.querySelector('.topNumber').children;
         for (var i=0; i<top.length; i++) {
-            let number = Number(top[i].textContent)
+            top[i].removeChild(top[i].children[0])
+            top[i].textContent = top[i].dataset.number
+            let number = Number(top[i].dataset.number)
             const imgEl = document.createElement('img');
             imgEl.src = 'src/img/gray_1.svg';
             listTr[number - 1].children[i].appendChild(imgEl)
@@ -81,7 +181,9 @@ buttonStart.onclick = () => {
         }
         const left = document.querySelector('.leftNumber').children;
         for (var i=0; i<left.length; i++) {
-            let number = Number(left[i].textContent)
+            left[i].removeChild(left[i].children[0])
+            left[i].textContent = left[i].dataset.number
+            let number = Number(left[i].dataset.number)
             const imgEl = document.createElement('img');
             if (listTr[i].children[number - 1].firstChild) {
                 listTr[i].children[number - 1].classList.remove('gray')
@@ -95,7 +197,9 @@ buttonStart.onclick = () => {
         }
         const bottom = document.querySelector('.bottomNumber').children;
         for (var i=0; i<bottom.length; i++) {
-            let number = Number(bottom[i].textContent)
+            bottom[i].removeChild(bottom[i].children[0])
+            bottom[i].textContent = bottom[i].dataset.number
+            let number = Number(bottom[i].dataset.number)
             const imgEl = document.createElement('img');
             if (listTr[10 - number].children[i].classList.contains('gray')) {
                 listTr[10 - number].children[i].firstChild.src = 'src/img/pink_2.svg'
