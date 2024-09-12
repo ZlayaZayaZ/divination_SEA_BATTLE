@@ -10,7 +10,8 @@ body {
 
 h1 {
     color: rgb(63, 62, 62);
-    font-size: 40px;
+    font-size: 10vmin;
+    text-align: center;
 }
 
 .content {
@@ -100,22 +101,46 @@ button {
     border-radius:0.5em;
 }
 
-.button {
+/* .button {
     border: 2px solid #333;
-}
+} */
 
 .divrules {
-    margin: 0 0 5vmin 5vmin;
+    margin: 5vmin 0 0 5vmin;
     display: flex; 
     flex-direction: column; 
     padding: 0;
     justify-content: center;
     border: 5px solid rgb(63, 62, 62);
-    min-width: calc(45vmin - 10px);
+    /* width: calc(96vmin - 10px); */
+    /* min-width: calc(45vmin - 10px); */
     max-width: calc(70vmin - 10px);
-    height: calc(84vmin - 10px);
+    /* height: calc(84vmin - 10px); */
     padding: 0 calc(3vmin);
     text-align: justify;
+}
+
+/* .columnsigns {
+    display: flex; 
+    border: 5px solid rgb(63, 62, 62);
+} */
+
+.rulesbutton {
+    margin-left: 10vmin;
+    /* margin-top: 5vmin; */
+    /* border: 5px solid rgb(63, 62, 62); */
+}
+
+.combination {
+    display: flex;
+    font-size: 3vmin;
+    align-items: center;
+    /* border: 5px solid rgb(63, 62, 62); */
+}
+
+.signs {
+    margin-top: 2vmin;
+    margin-left: 5vmin;
 }
 
 .sign {
@@ -123,25 +148,27 @@ button {
     padding: 0;
     width: calc(5vmin - 1px);
     height: calc(5vmin - 1px);
-    /* border: 1px solid #aaa;
-    background-color: #eee; */
-    box-sizing: border-box;
-}
-
-.combination {
     display: flex;
-    font-size: 2.6vmin;
-    /* padding-left: calc(3vmin); */
-
 }
 
-.green {
-    background-color: green;
-}
-/* .number {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    border: 1px solid green;
-} */
+@media(max-width: 600px) {
+    .content {
+        display: flex; 
+        flex-direction: column;
+    }
 
+    .divrules {
+        margin: 0 0 5vmin 5vmin;
+        display: flex; 
+        flex-direction: column; 
+        padding: 0;
+        justify-content: center;
+        border: 5px solid rgb(63, 62, 62);
+        width: calc(96vmin - 10px);
+        /* min-width: calc(45vmin - 10px);
+        max-width: calc(70vmin - 10px); */
+        /* height: calc(84vmin - 10px); */
+        padding: 0 calc(3vmin);
+        text-align: justify;
+    }
+  }

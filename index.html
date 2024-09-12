@@ -12,7 +12,7 @@
     <div class="content">
       <div class="divline">
         <div class="divcolumn">
-            <button class="item resetNumber" type="button">Я reset number</button>
+            <button class="item resetNumber" type="button">N</button>
             <div class="leftNumber columnnumber">
                 <div class="number item"></div>
                 <div class="number item"></div>
@@ -25,7 +25,7 @@
                 <div class="number item"></div>
                 <div class="number item"></div>
             </div>
-            <button class="item bottom" type="button">Я bottom</button>
+            <button class="item bottom" type="button"></button>
         </div>
         <div class="divcolumn">
             <div class="topNumber linenumber">
@@ -176,7 +176,7 @@
             </div>
         </div>
         <div class="divcolumn">
-            <button class="item reset" type="button">Я Reset</button>
+            <button class="item reset" type="button">R</button>
             <div class="right columnnumber">
                 <textarea class="text" name="text" rows="14" cols="10" wrap="soft" maxlength="40"></textarea>
                 <textarea class="text" name="text" rows="14" cols="10" wrap="soft" maxlength="40"></textarea>
@@ -189,30 +189,46 @@
                 <textarea class="text" name="text" rows="14" cols="10" wrap="soft" maxlength="40"></textarea>
                 <textarea class="text" name="text" rows="14" cols="10" wrap="soft" maxlength="40"></textarea>
             </div>
-            <button class="item start" type="button">Start</button>
+            <button class="item start" type="button">S</button>
         </div>
       </div>
       <div class="divrules">
-        <div class="signs">
-            <div class="combination">
-                <div class="sign">
-                    <img src="src/img/gray_1.svg" class="field" alt="">
-                </div>   
-                <p>- одиночное попадание</p>
+        <!-- <div class="columnsigns"> -->
+            <div class="signs">
+                <div class="combination">
+                    <div class="sign">
+                        <img src="src/img/gray_1.svg" class="field" alt="">
+                    </div>   
+                    <p class="description">- одиночное попадание</p>
+                </div>
+                <div class="combination">
+                    <div class="sign">
+                        <img src="src/img/pink_2.svg" class="field" alt="">
+                    </div>   
+                    <p class="description">- одиночное совпадение</p>
+                </div>
+                <div class="combination">
+                    <div class="sign">
+                        <img src="src/img/red_3.svg" class="field" alt="">
+                    </div>   
+                    <p class="description">- двойное совпадение</p>
+                </div>
             </div>
-            <div class="combination">
-                <div class="sign">
-                    <img src="src/img/pink_2.svg" class="field" alt="">
-                </div>   
-                <p>- одиночное совпадение</p>
+            <div class="rulesbutton">
+                <div class="combination">
+                    <!-- <div class="sign">R</div> -->
+                    <p>R - кнопка сброса всех данных с поля</p>
+                </div>
+                <div class="combination">
+                    <!-- <div class="sign">N</div> -->
+                    <p>N - кнопка сброса числовых данных с поля</p>
+                </div>
+                <div class="combination">
+                    <!-- <div class="sign">S</div> -->
+                    <p>S - кнопка начала расчетов</p>
+                </div>
             </div>
-            <div class="combination">
-                <div class="sign">
-                    <img src="src/img/red_3.svg" class="field" alt="">
-                </div>   
-                <p>- двойное совпадение</p>
-            </div>
-        </div>
+        <!-- </div> -->
         <div class="rules">
           <h2>Правила:</h2>
           <div>
